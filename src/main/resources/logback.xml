@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>
+                 %msg%n
+            </Pattern>
+        </layout>
+    </appender>
+
+    <!--<root level="info">-->
+        <!--<appender-ref ref="STDOUT" />-->
+    <!--</root>-->
+
+
+    <logger name="org.learn.prospring4.chapter12.SimpleMessageListener" level="info" >
+        <appender-ref ref="STDOUT" />
+    </logger>
+</configuration>
