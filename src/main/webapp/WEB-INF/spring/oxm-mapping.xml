@@ -1,0 +1,28 @@
+<mapping>
+    <class name="org.learn.prospring4.chapter12.rest.Contacts">
+        <field name="contacts" type="org.learn.prospring4.chapter12.rest.Contact" collection="arraylist">
+            <bind-xml name="contact"/>
+        </field>
+    </class>
+    <class name="org.learn.prospring4.chapter12.rest.Contact" identity="id">
+        <map-to xml="contact"/>
+        <field name="id" type="long">
+            <Ьind-xml name="id" node="element"/>
+        </field>
+        <field name="firstName" type="string">
+            <Ьind-xml name="firstName" node="element"/>
+        </field>
+        <field name="lastName" type="string">
+            <Ьind-xml name="lastName" node="element"/>
+        </field>
+        <field name="birthDate" type="string" handler="dateHandler">
+            <Ьind-xml name="ЬirthDate" node="element"/>
+        </field>
+        <field name="version" type="integer">
+            <Ьind-xml name="version" node="element"/>
+        </field>
+    </class>
+    <field-handler name="dateHandler" class="org.learn.prospring4.chapter12.rest.DateTimeFieldHandler">
+        <param name="date-format" value="yyyy-ММ-dd"/>
+    </field-handler>
+</mapping>

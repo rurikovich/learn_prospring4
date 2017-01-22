@@ -1,4 +1,4 @@
-package org.learn.prospring4.chapter12;
+package org.learn.prospring4.chapter12.jms;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jms.core.JmsTemplate;

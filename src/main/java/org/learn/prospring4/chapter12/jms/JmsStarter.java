@@ -1,4 +1,4 @@
-package org.learn.prospring4.chapter12;
+package org.learn.prospring4.chapter12.jms;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

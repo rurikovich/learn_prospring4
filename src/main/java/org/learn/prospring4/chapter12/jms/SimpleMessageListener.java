@@ -1,4 +1,4 @@
-package org.learn.prospring4.chapter12;
+package org.learn.prospring4.chapter12.jms;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
