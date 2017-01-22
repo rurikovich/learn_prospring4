@@ -1,5 +1,7 @@
 package org.learn.prospring4.chapter12.rest;
 
+import org.learn.prospring4.chapter12.rest.entities.Contact;
+
 import java.io.Serializable;
 import java.util.List;
 

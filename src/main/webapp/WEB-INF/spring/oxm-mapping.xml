@@ -1,10 +1,10 @@
 <mapping>
     <class name="org.learn.prospring4.chapter12.rest.Contacts">
-        <field name="contacts" type="org.learn.prospring4.chapter12.rest.Contact" collection="arraylist">
+        <field name="contacts" type="org.learn.prospring4.chapter12.rest.entities.Contact" collection="arraylist">
             <bind-xml name="contact"/>
         </field>
     </class>
-    <class name="org.learn.prospring4.chapter12.rest.Contact" identity="id">
+    <class name="org.learn.prospring4.chapter12.rest.entities.Contact" identity="id">
         <map-to xml="contact"/>
         <field name="id" type="long">
             <Ьind-xml name="id" node="element"/>

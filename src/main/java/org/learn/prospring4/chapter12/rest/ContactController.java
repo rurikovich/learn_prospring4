@@ -1,5 +1,6 @@
 package org.learn.prospring4.chapter12.rest;
 
+import org.learn.prospring4.chapter12.rest.entities.Contact;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

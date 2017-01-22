@@ -1,5 +1,6 @@
 package org.learn.prospring4.chapter12.rest;
 
+import org.learn.prospring4.chapter12.rest.entities.Contact;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;

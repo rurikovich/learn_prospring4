@@ -1,5 +1,6 @@
 package org.learn.prospring4.chapter12.rest;
 
+import org.learn.prospring4.chapter12.rest.entities.Contact;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
