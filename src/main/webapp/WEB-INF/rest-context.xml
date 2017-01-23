@@ -26,4 +26,6 @@ http://www.springframework.org/schema/mvc/spring-mvc.xsd">
         <property name="mappingLocation" value="WEB-INF/oxm-mapping.xml"/>
     </bean>
 
+    <import resource="persistence-app-context.xml" />
+
 </beans>

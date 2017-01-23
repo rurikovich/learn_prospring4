@@ -2,15 +2,31 @@ package org.learn.prospring4.chapter12.rest.entities;
 
 import org.joda.time.DateTime;
 
+import javax.persistence.*;
+import java.io.Serializable;
+import java.util.Date;
+
 /**
  * Created by User on 21.01.2017.
  */
-public class Contact {
-    private long id;
+@Entity
+@Table(name = "CONTACT")
+public class Contact implements Serializable{
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(name = "FIRST_NAМE")
     private String firstName;
+
+    @Column(name = "LAST_NAМE")
     private String lastName;
+
+
+    @Column(name = "BIRTH_DATE")
     private DateTime birthDate;
-    private int version;
+
+    private Integer version;
 
     public Contact() {
     }
