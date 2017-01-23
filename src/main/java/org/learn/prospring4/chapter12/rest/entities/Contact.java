@@ -1,5 +1,7 @@
 package org.learn.prospring4.chapter12.rest.entities;
 
+import org.joda.time.DateTime;
+
 /**
  * Created by User on 21.01.2017.
  */
@@ -7,10 +9,13 @@ public class Contact {
     private long id;
     private String firstName;
     private String lastName;
-    private String birthDate;
+    private DateTime birthDate;
     private int version;
 
-    public Contact(long id, String firstName, String lastName, String birthDate, int version) {
+    public Contact() {
+    }
+
+    public Contact(long id, String firstName, String lastName, DateTime birthDate, int version) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -42,11 +47,11 @@ public class Contact {
         this.lastName = lastName;
     }
 
-    public String getBirthDate() {
+    public DateTime getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(String birthDate) {
+    public void setBirthDate(DateTime birthDate) {
         this.birthDate = birthDate;
     }
 
