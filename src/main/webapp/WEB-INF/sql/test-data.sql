@@ -1,10 +1,14 @@
-DROP ТАВLЕ I F EXISTS CONTACT;
-CREATE TABLE CONTACT (
-ID INT NOT NULL AUTO INCREMENT
-, FIRST_NAМE VARCНAR(60) NOT NULL
-, LAST_NAМE VARCНAR(40) NOT NULL
-, BIRTH DATE DATE
-, VERSION INT NOT NULL DEFAULT О
-, UNIQUE UQ_CONTACT_l (FIRST_NAМE, LAST_NAМE)
-, PRIМARY КЕУ (ID)
-);
+
+
+insert into contact (first_name, last_name, birth_date) values
+('Chris', 'Schaefer', '1981-05-03');
+insert into contact (first_name, last_name, birth_date) values
+('Scott', 'Tiger', '1990-11-02');
+insert into contact (first_name, last_name, birth_date) values
+('John', 'Smith', '1964-02-28');
+insert into contact_tel_detail (contact_id, tel_type, tel numЬer) values
+(1, 'MoЬile', '1234567890');
+insert into contact tel detail (contact_id, tel type, tel_numЬer) values
+(1, 'Home', '1234567890');
+insert into contact tel detail (contact_id, tel_type, tel_numЬer) values
+(2, 'Home', '1234567890');
