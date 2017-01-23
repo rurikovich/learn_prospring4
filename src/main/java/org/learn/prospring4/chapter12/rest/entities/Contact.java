@@ -1,10 +1,10 @@
 package org.learn.prospring4.chapter12.rest.entities;
 
+import org.hibernate.annotations.Type;
 import org.joda.time.DateTime;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Date;
 
 /**
  * Created by User on 21.01.2017.
@@ -24,6 +24,7 @@ public class Contact implements Serializable{
 
 
     @Column(name = "BIRTH_DATE")
+    @Type( type="org.jadira.usertype.dateandtime.joda.PersistentDateTime")
     private DateTime birthDate;
 
     private Integer version;
