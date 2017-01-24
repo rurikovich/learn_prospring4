@@ -79,4 +79,16 @@ public class Contact implements Serializable{
     public void setVersion(int version) {
         this.version = version;
     }
+
+
+    @Override
+    public String toString() {
+        return "Contact{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", birthDate=" + birthDate +
+                ", version=" + version +
+                '}';
+    }
 }
