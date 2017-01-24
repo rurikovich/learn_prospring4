@@ -1,6 +1,7 @@
-package org.learn.prospring4.chapter12.rest;
+package org.learn.prospring4.chapter12.rest.client;
 
 import org.joda.time.DateTime;
+import org.learn.prospring4.chapter12.rest.Contacts;
 import org.learn.prospring4.chapter12.rest.entities.Contact;
 import org.springframework.context.support.GenericXmlApplicationContext;
 import org.springframework.web.client.RestTemplate;
@@ -20,7 +21,7 @@ public class RestClient {
             "http://localhost:8080/restful/contact/{id}";
     private static final String URL_DELETE_CONTACT =
             "http://localhost:8080/restful/contact/{id}";
-    public static final int ID = 5;
+    public static final int ID = 2;
 
     public static void main(String[] args) {
         GenericXmlApplicationContext ctx = new GenericXmlApplicationContext();
@@ -28,16 +29,14 @@ public class RestClient {
         ctx.refresh();
         Contact contact;
         RestTemplate restTemplate = ctx.getBean("restTemplate", RestTemplate.class);
-
-        createContact(restTemplate,  "James", "Gosling");
-
         listContacts(restTemplate);
+
+        createContact(restTemplate, "James", "Gosling");
 
 
         contact = fetchContact(restTemplate, ID);
         System.out.println(contact);
         System.out.println("");
-
 
         contact = fetchContact(restTemplate, ID);
         contact.setFirstName("John Doe");
@@ -46,13 +45,9 @@ public class RestClient {
         System.out.println("Contact update successfully: " + contact);
         System.out.println("");
 
-
-
         restTemplate.delete(URL_DELETE_CONTACT, ID);
         System.out.println("Testing delete contact bу id : ");
         listContacts(restTemplate);
-
-
     }
 
     private static Contact fetchContact(RestTemplate restTemplate, int id) {
@@ -62,7 +57,7 @@ public class RestClient {
         return contact;
     }
 
-    private static void createContact(RestTemplate restTemplate,  String firstName, String lastName) {
+    private static void createContact(RestTemplate restTemplate, String firstName, String lastName) {
         System.out.println("Testing create contact :");
         Contact contactNew = new Contact();
         contactNew.setId(-1);
