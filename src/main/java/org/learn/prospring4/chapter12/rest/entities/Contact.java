@@ -40,7 +40,8 @@ public class Contact implements Serializable{
         this.version = version;
     }
 
-    public long getId() {
+
+    public Long getId() {
         return id;
     }
 

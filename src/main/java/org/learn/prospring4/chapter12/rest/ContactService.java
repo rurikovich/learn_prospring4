@@ -31,8 +31,8 @@ public class ContactService {
     }
 
     @Transactional
-    public void save(Contact contact) {
-        contactRepository.save(contact);
+    public Contact save(Contact contact) {
+       return contactRepository.save(contact);
     }
 
     public void delete(Contact contact) {
