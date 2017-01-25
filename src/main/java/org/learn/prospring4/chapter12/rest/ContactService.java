@@ -1,41 +1,21 @@
 package org.learn.prospring4.chapter12.rest;
 
-import com.google.common.collect.Lists;
 import org.learn.prospring4.chapter12.rest.entities.Contact;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 /**
- * Created by User on 22.01.2017.
+ * Created by rurik on 25.01.2017.
  */
-@Service("springJpaContactService")
-@Repository
-@Transactional
-public class ContactService {
+public interface ContactService {
+    List<Contact> findAll();
 
-    @Autowired
-    private ContactRepository contactRepository;
+    List<Contact> findByFirstNameAndLastName(String firstName, String lastName);
 
-    @Transactional(readOnly = true)
-    public List<Contact> findAll() {
-        return Lists.newArrayList(contactRepository.findAll());
-    }
+    Contact findByid(Long id);
 
-    @Transactional(readOnly = true)
-    public Contact findByid(Long id) {
-        return contactRepository.findOne(id);
-    }
+    Contact save(Contact contact);
 
-    @Transactional
-    public Contact save(Contact contact) {
-       return contactRepository.save(contact);
-    }
+    void delete(Contact contact);
 
-    public void delete(Contact contact) {
-        contactRepository.delete(contact);
-    }
 }

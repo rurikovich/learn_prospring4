@@ -15,19 +15,6 @@ http://www.springframework.org/schema/data/jpa/spring-jpa.xsd
 http://www.springframework.org/schema/tx
 http://www.springframework.org/schema/tx/spring-tx.xsd">
 
-    <!--<jdbc:embedded-database id="dataSource" type="DERBY">-->
-    <!--<jdbc:script location="classpath:META-INF/sql/schema.sql"/>-->
-    <!--<jdbc:script location="classpath:META-INF/sql/test-data.sql"/>-->
-    <!--</jdbc:embedded-database>-->
-
-    <bean name="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://192.168.99.100:3306/learnSpring4"/>
-        <property name="username" value="root"/>
-        <property name="password" value="1-1040"/>
-    </bean>
-
-
     <bean id="transactionМanager" class="org.springframework.orm.jpa.JpaTransactionManager">
         <property name="entityManagerFactory" ref="emf"/>
     </bean>
@@ -54,10 +41,18 @@ http://www.springframework.org/schema/tx/spring-tx.xsd">
         </property>
     </bean>
 
-    <context:component-scan base-package="org.learn.prospring4.chapter12.rest"/>
     <jpa:repositories base-package="org.learn.prospring4.chapter12.rest"
                       entity-manager-factory-ref="emf"
                       transaction-manager-ref="transactionМanager"/>
+
+    <beans profile="dev">
+        <bean name="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+            <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+            <property name="url" value="jdbc:mysql://192.168.99.100:3306/learnSpring4"/>
+            <property name="username" value="root"/>
+            <property name="password" value="1-1040"/>
+        </bean>
+    </beans>
 </beans>
 
 

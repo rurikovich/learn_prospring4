@@ -23,10 +23,10 @@ http://www.springframework.org/schema/mvc/spring-mvc.xsd">
     <context:component-scan base-package="org.learn.prospring4.chapter12.rest"/>
 
     <bean id="castorMarshaller" class="org.springframework.oxm.castor.CastorMarshaller">
-        <property name="mappingLocation" value="WEB-INF/oxm-mapping.xml"/>
+        <property name="mappingLocation" value="classpath:META-INF/spring/oxm-mapping.xml"/>
     </bean>
 
-    <import resource="persistence-app-context.xml" />
+    <import resource="classpath:META-INF/spring/persistence-app-context.xml" />
     <import resource="web-security.xml"/>
 
 </beans>
