@@ -24,7 +24,7 @@ public class ContactControllerTest {
     @Before
     public void setUp() throws Exception {
         Contact contact = new Contact();
-        contact.setId(1l);
+        contact.setId(1);
         contact.setFirstName("Chris");
         contact.setLastName("Schaefer");
         contacts.add(contact);
@@ -50,14 +50,13 @@ public class ContactControllerTest {
 
     @Test
     public void testCreate() {
-
         final Contact newContact = new Contact();
         newContact.setId(9991);
         newContact.setFirstName("Rod");
         newContact.setLastName("Johnson");
 
         ContactService contactService = mock(ContactService.class);
-        when(contactService.save(newContact)).thenAnswer((Answer<Contact>) invocation -> {
+        when(contactService.save(newContact)).thenAnswer(invocation -> {
             contacts.add(newContact);
             return newContact;
         });

@@ -30,7 +30,7 @@ import static org.junit.Assert.*;
 @TestExecutionListeners({ServiceTestExecutionListener.class})
 @ActiveProfiles("test")
 public class ContactServiceTest extends AbstractTransactionalJUnit4SpringContextTests {
-    public static final String CONTACT_SERVICEIMPL_TEST_DATA_XLS = "/org/learn/prospring4/chapter13/data/ContactServiceimplTest.xls";
+    public static final String CONTACT_SERVICE_TEST_DATA_XLS = "/org/learn/prospring4/chapter13/data/ContactServiceimplTest.xls";
 
     @Autowired
     ContactService contactService;
@@ -38,7 +38,7 @@ public class ContactServiceTest extends AbstractTransactionalJUnit4SpringContext
     @PersistenceContext
     private EntityManager em;
 
-    @DataSets(setUpDataSet = CONTACT_SERVICEIMPL_TEST_DATA_XLS)
+    @DataSets(setUpDataSet = CONTACT_SERVICE_TEST_DATA_XLS)
     @Test
     public void testFindAll() throws Exception {
         List<Contact> result = contactService.findAll();
@@ -46,7 +46,7 @@ public class ContactServiceTest extends AbstractTransactionalJUnit4SpringContext
         assertEquals(5, result.size());
     }
 
-    @DataSets(setUpDataSet = CONTACT_SERVICEIMPL_TEST_DATA_XLS)
+    @DataSets(setUpDataSet = CONTACT_SERVICE_TEST_DATA_XLS)
     @Test
     public void testFindByFirstNameAndLastName_l() throws Exception {
         List<Contact> result = contactService.findByFirstNameAndLastName("Chris", "Schaefer");
@@ -55,7 +55,7 @@ public class ContactServiceTest extends AbstractTransactionalJUnit4SpringContext
     }
 
 
-    @DataSets(setUpDataSet = CONTACT_SERVICEIMPL_TEST_DATA_XLS)
+    @DataSets(setUpDataSet = CONTACT_SERVICE_TEST_DATA_XLS)
     @Test
     public void testFindByFirstNameAndLastName_2() throws Exception {
         List<Contact> result = contactService.findByFirstNameAndLastName("Peter", "Chan");
