@@ -8,18 +8,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
-import javax.persistence.PersistenceContext;
 
 /**
  * Created by User on 27.01.2017.
  */
 @Component
 public class HibernateStatisticsFactoryBean implements FactoryBean<Statistics> {
-
-    @PersistenceContext
-    private EntityManager entityManager;
 
     @Autowired
     private EntityManagerFactory entityManagerFactory;
