@@ -39,7 +39,7 @@ http://www.springframework.org/schema/mvc/spring-mvc.xsd">
         <property name="beans">
             <map>
                 <entry key="bean:name= ProSpring4ContactApp" value-ref="appStatisticsBean"/>
-                <entry key="Hibernate:type=statistics">
+                <entry key="bean:name=Prospring4ContactApp-hibernate">
                     <ref bean="hibernateStatisticsFactoryBean"/>
                 </entry>
             </map>
