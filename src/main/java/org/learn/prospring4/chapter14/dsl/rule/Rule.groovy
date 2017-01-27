@@ -8,7 +8,4 @@ class Rule {
     def conditions = new ArrayList()
     def actions = new ArrayList()
     def parameters = new ArrayList()
-
-
-
 }

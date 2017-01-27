@@ -26,7 +26,27 @@ http://www.springframework.org/schema/mvc/spring-mvc.xsd">
         <property name="mappingLocation" value="classpath:META-INF/spring/oxm-mapping.xml"/>
     </bean>
 
-    <import resource="classpath:META-INF/spring/persistence-app-context.xml" />
+    <bean id="appStatisticsBean" class="org.learn.prospring4.chapter12.rest.jmx.AppStatisticsImpl"/>
+
+    <!--<bean id="statisticsBean" class="org.hibernate.jmx.StatisticsService">-->
+        <!--<property name="statisticsEnabled" value="true"/>-->
+        <!--<property name="sessionFactoryJNDIName" value="sessionFactory"/>-->
+    <!--</bean>-->
+
+
+
+    <bean id="jmxExporter" class="org.springframework.jmx.export.MBeanExporter">
+        <property name="beans">
+            <map>
+                <entry key="bean:name= ProSpring4ContactApp" value-ref="appStatisticsBean"/>
+                <entry key="Hibernate:type=statistics">
+                    <ref bean="hibernateStatisticsFactoryBean"/>
+                </entry>
+            </map>
+        </property>
+    </bean>
+
+    <import resource="classpath:META-INF/spring/persistence-app-context.xml"/>
     <import resource="web-security.xml"/>
 
 </beans>
