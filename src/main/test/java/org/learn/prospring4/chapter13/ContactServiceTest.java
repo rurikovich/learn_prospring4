@@ -2,8 +2,8 @@ package org.learn.prospring4.chapter13;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.learn.prospring4.chapter12.rest.ContactService;
-import org.learn.prospring4.chapter12.rest.entities.Contact;
+import org.learn.prospring4.chapter16.mvc.ContactService;
+import org.learn.prospring4.chapter16.mvc.entities.Contact;
 import org.learn.prospring4.chapter13.annotations.DataSets;
 import org.learn.prospring4.chapter13.annotations.ServiceTestExecutionListener;
 import org.learn.prospring4.chapter13.config.ServiceTestConfig;

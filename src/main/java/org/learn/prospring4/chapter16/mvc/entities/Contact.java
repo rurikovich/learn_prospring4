@@ -1,20 +1,29 @@
-package org.learn.prospring4.chapter12.rest.entities;
+package org.learn.prospring4.chapter16.mvc.entities;
 
 import org.hibernate.annotations.Type;
 import org.joda.time.DateTime;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Arrays;
+
+import static org.springframework.format.annotation.DateTimeFormat.*;
 
 /**
  * Created by User on 21.01.2017.
  */
 @Entity
 @Table(name = "CONTACT")
-public class Contact implements Serializable{
+public class Contact implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ID")
     private Long id;
+
+    @Version
+    @Column(name = "VERSION")
+    private int version;
 
     @Column(name = "FIRST_NAМE")
     private String firstName;
@@ -22,12 +31,18 @@ public class Contact implements Serializable{
     @Column(name = "LAST_NAМE")
     private String lastName;
 
-
     @Column(name = "BIRTH_DATE")
-    @Type( type="org.jadira.usertype.dateandtime.joda.PersistentDateTime")
+    @Type(type = "org.jadira.usertype.dateandtime.joda.PersistentDateTime")
+    @DateTimeFormat(iso = ISO.DATE)
     private DateTime birthDate;
 
-    private Integer version;
+    @Column(name = "DESCRIPTION")
+    private String description;
+
+    @Basic(fetch = FetchType.LAZY)
+    @Lob
+    @Column(name = "РНОТО")
+    private byte[] photo;
 
     public Contact() {
     }
@@ -81,15 +96,25 @@ public class Contact implements Serializable{
         this.version = version;
     }
 
+    @Transient
+    public String getBirthDateString() {
+        String birthDateString = "";
+        if (birthDate != null){
+            birthDateString = org.joda.time.format.DateTimeFormat
+                    .forPattern("yyyy-MM-dd").print(birthDate);
+        }
+        return birthDateString;
+    }
 
     @Override
     public String toString() {
         return "Contact{" +
                 "id=" + id +
+                ", version=" + version +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", birthDate=" + birthDate +
-                ", version=" + version +
+                ", description='" + description + '\'' +
                 '}';
     }
 }

@@ -1,6 +1,6 @@
-package org.learn.prospring4.chapter12.rest;
+package org.learn.prospring4.chapter16.mvc;
 
-import org.learn.prospring4.chapter12.rest.entities.Contact;
+import org.learn.prospring4.chapter16.mvc.entities.Contact;
 
 import java.util.List;
 

@@ -1,10 +1,7 @@
-package org.learn.prospring4.chapter12.rest;
+package org.learn.prospring4.chapter16.mvc;
 
-import org.learn.prospring4.chapter12.rest.entities.Contact;
+import org.learn.prospring4.chapter16.mvc.entities.Contact;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;

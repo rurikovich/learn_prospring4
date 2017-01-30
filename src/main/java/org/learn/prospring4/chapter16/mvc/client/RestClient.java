@@ -1,8 +1,8 @@
-package org.learn.prospring4.chapter12.rest.client;
+package org.learn.prospring4.chapter16.mvc.client;
 
 import org.joda.time.DateTime;
-import org.learn.prospring4.chapter12.rest.Contacts;
-import org.learn.prospring4.chapter12.rest.entities.Contact;
+import org.learn.prospring4.chapter16.mvc.Contacts;
+import org.learn.prospring4.chapter16.mvc.entities.Contact;
 import org.springframework.context.support.GenericXmlApplicationContext;
 import org.springframework.web.client.RestTemplate;
 

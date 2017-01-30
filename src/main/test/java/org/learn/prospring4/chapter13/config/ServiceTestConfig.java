@@ -13,7 +13,7 @@ import javax.sql.DataSource;
  */
 @Configuration
 @ImportResource("classpath:META-INF/spring/persistence-app-context.xml")
-@ComponentScan(basePackages = {"org.learn.prospring4.chapter13","org.learn.prospring4.chapter12.rest"})
+@ComponentScan(basePackages = {"org.learn.prospring4.chapter13", "org.learn.prospring4.chapter16.mvc"})
 @Profile("test")
 public class ServiceTestConfig {
     @Bean

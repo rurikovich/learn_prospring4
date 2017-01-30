@@ -1,6 +1,6 @@
-package org.learn.prospring4.chapter12.rest.jmx;
+package org.learn.prospring4.chapter16.mvc.jmx;
 
-import org.learn.prospring4.chapter12.rest.ContactService;
+import org.learn.prospring4.chapter16.mvc.ContactService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 /**

@@ -1,4 +1,4 @@
-package org.learn.prospring4.chapter12.rest;
+package org.learn.prospring4.chapter16.mvc;
 
 import org.exolab.castor.mapping.GeneralizedFieldHandler;
 import org.exolab.castor.mapping.ValidityException;

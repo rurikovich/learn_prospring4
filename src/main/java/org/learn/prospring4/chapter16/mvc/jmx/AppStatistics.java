@@ -1,4 +1,4 @@
-package org.learn.prospring4.chapter12.rest.jmx;
+package org.learn.prospring4.chapter16.mvc.jmx;
 
 /**
  * Created by User on 27.01.2017.

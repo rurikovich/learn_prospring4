@@ -1,7 +1,7 @@
-package org.learn.prospring4.chapter12.rest;
+package org.learn.prospring4.chapter16.mvc;
 
 import com.google.common.collect.Lists;
-import org.learn.prospring4.chapter12.rest.entities.Contact;
+import org.learn.prospring4.chapter16.mvc.entities.Contact;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;

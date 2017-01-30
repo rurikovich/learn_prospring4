@@ -1,4 +1,4 @@
-package org.learn.prospring4.chapter12.rest.client;
+package org.learn.prospring4.chapter16.mvc.client;
 
 import org.apache.http.auth.AuthScope;
 import org.apache.http.auth.Credentials;
