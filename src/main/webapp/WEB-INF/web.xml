@@ -63,6 +63,9 @@
             </param-value>
         </init-param>
         <load-on-startup>1</load-on-startup>
+        <multipart-config>
+            <max-file-size>SOOOOOO</max-file-size>
+        </multipart-config>
     </servlet>
 
     <servlet-mapping>

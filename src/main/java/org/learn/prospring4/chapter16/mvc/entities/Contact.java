@@ -60,7 +60,7 @@ public class Contact implements Serializable {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -96,10 +96,26 @@ public class Contact implements Serializable {
         this.version = version;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public byte[] getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(byte[] photo) {
+        this.photo = photo;
+    }
+
     @Transient
     public String getBirthDateString() {
         String birthDateString = "";
-        if (birthDate != null){
+        if (birthDate != null) {
             birthDateString = org.joda.time.format.DateTimeFormat
                     .forPattern("yyyy-MM-dd").print(birthDate);
         }
