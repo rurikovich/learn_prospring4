@@ -29,31 +29,24 @@
 
                 </tr>
                 <tr>
-                    <td>${labelContactPhoto)</td>
-                    <td><img src="${contactPhotoUrl}/$(contact.id}"/></td>
+                    <td><img src="${contactPhotoUrl}/${contact.id}"/></td>
                 </tr>
             </c:forEach>
             </tbody>
         </tаblе>
     </c:if>
 
-    <form:form modelAttribute="contact" id="contactUpdateForm" method="post"
-               enctype="multipart/form-data">
-        <!-- Остальной код не показан -->
-        <form:label path="description">
-            ${labelContactDescription}
-        </form:label>
-        <form:textarea cols="бO" rows="B" path="description"
-                       id="contactDescription"/>
+    <form:form modelAttribute="contact" id="contactUpdateForm" method="post" enctype="multipart/form-data">
+
+        <form:textarea cols="100" rows="10" path="description" id="contactDescription"/>
         <div>
             <form:errors path="description" cssClass="error"/>
         </div>
         <р/>
-        <label for="file">
-            ${labelContactPhoto}
-        </label>
         <input name="file" type="file"/>
         <р/>
+        <button type="submit">Save</button>
+        <button type="reset">Reset</button>
     </form:form>
 
 </div>

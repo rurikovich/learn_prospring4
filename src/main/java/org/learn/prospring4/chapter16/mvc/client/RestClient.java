@@ -60,7 +60,7 @@ public class RestClient {
     private static void createContact(RestTemplate restTemplate, String firstName, String lastName) {
         System.out.println("Testing create contact :");
         Contact contactNew = new Contact();
-        contactNew.setId(-1);
+        contactNew.setId(-1l);
         contactNew.setVersion(1);
         contactNew.setFirstName(firstName);
         contactNew.setLastName(lastName);

@@ -5,8 +5,6 @@ import org.learn.prospring4.chapter16.mvc.entities.Contact;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.messaging.Message;
-import org.springframework.messaging.support.GenericMessage;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -38,7 +36,9 @@ public class ContactController {
     public String list(Model uiModel) {
         logger.info("Listing contacts");
         List<Contact> contacts = contactService.findAll();
+
         uiModel.addAttribute("contacts", contacts);
+        uiModel.addAttribute("contact", !contacts.isEmpty() ? contacts.get(0) : null);
         logger.info("No. of contacts: " + contacts.size());
         return "contacts/list";
     }
@@ -50,7 +50,6 @@ public class ContactController {
                          RedirectAttributes redirectAttributes, Locale locale,
                          @RequestParam(value = "file", required = false) Part file) {
 
-
         logger.info("Creating contact");
         if (bindingResult.hasErrors()) {
             uiModel.addAttribute("contact", contact);
@@ -59,8 +58,6 @@ public class ContactController {
 
         uiModel.asMap().clear();
         logger.info("Contact id: " + contact.getId());
-// Обработка загруженного файла
-
 
         if (file != null) {
             logger.info("File name: " + file.getName());
@@ -74,14 +71,27 @@ public class ContactController {
                 contact.setPhoto(fileContent);
             } catch (IOException ех) {
                 logger.error("Error saving uploaded file");
-                contact.setPhoto(fileContent);
-
             }
+            contact.setPhoto(fileContent);
         }
 
-        return "";
+        contactService.save(contact);
+        return "redirect:/contacts/" + UrlUtil.encodeUrlPathSegment(
+                contact.getId().toString(), httpServletRequest);
+
+
     }
 
+
+    @RequestMapping(value = "/photo/{id}", method = RequestMethod.GET)
+    @ResponseBody
+    public byte[] downloadPhoto(@PathVariable("id") Long id) {
+        Contact contact = contactService.findByid(id);
+        if (contact.getPhoto() != null) {
+            logger.info("Downloading photo for id: {} with size: {}", contact.getId(), contact.getPhoto().length);
+        }
+        return contact.getPhoto();
+    }
 
 
 }

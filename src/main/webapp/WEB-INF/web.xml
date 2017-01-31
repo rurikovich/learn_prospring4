@@ -64,7 +64,7 @@
         </init-param>
         <load-on-startup>1</load-on-startup>
         <multipart-config>
-            <max-file-size>SOOOOOO</max-file-size>
+            <max-file-size>5OOOOOO</max-file-size>
         </multipart-config>
     </servlet>
 
