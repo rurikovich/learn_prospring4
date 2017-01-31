@@ -5,6 +5,7 @@ import org.learn.prospring4.chapter16.mvc.entities.Contact;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -41,6 +42,12 @@ public class ContactController {
         uiModel.addAttribute("contact", !contacts.isEmpty() ? contacts.get(0) : null);
         logger.info("No. of contacts: " + contacts.size());
         return "contacts/list";
+    }
+
+    @PreAuthorize("hasRole('ROLE_USER')")
+    @RequestMapping( value = "/mylist", method = RequestMethod.GET)
+    public String listAll(Model uiModel) {
+        return "contacts/mylist";
     }
 
 
